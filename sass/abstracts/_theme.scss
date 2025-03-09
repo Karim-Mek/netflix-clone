@@ -1,0 +1,80 @@
+// @use "sass:map";
+
+// TYPOGRAPHY:
+$font-pri: "Poppins", sans-serif;
+
+// FONT WEIGHTS:
+$fw-thin: 100;
+$fw-extralight: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+// -----------------------------------------------------
+// COLORS:
+$clr-red-pri: #e50914;
+$clr-red-pri-hover: #c1111a;
+$clr-red-pri-active: #831010;
+
+$clr-black: #000000;
+$clr-white: #ffffff;
+
+// Input Gray:
+$clr-gray-input-border: #5e5e5e;
+
+// Text Gray:
+$clr-gray-text: #f8e8e9;
+$clr-gray-input-placeholder: #b4b6b6;
+$clr-gray-footer: #ffffffb3;
+
+// Arrows Buttons Grays:
+$clr-gray-arr: #1a1a1a;
+$clr-gray-arr-hover: #333333;
+
+// Accordion Grays:
+$clr-gray-acc: #2d2d2d;
+$clr-gray-acc-hover: #414141;
+
+// Section Splitters:
+$clr-red-splitter: #e10b1c;
+$clr-pink-splitter: #9a2358;
+$clr-pink-dark-splitter: #200d16;
+$clr-purple-blue-splitter-bg: #121b41; // Section Splitter Background
+
+// Cards Gradient Colors:
+$clr-purple-blue-gradient: #192144;
+$clr-pink-dark-gradient: #200e16;
+
+/*
+$colors: (
+  "reds": (
+    "base": #e50914,
+    "hover": #b20710,
+    "splitter": #e10b1c
+  ),
+  "black": #000000,
+  "white": #ffffff,
+  grays: (
+    "accordion": (
+      "base": #2d2d2d,
+      "hover": #414141
+    ),
+    "arrow": (
+      "base": #1a1a1a,
+      "hover": #333333
+    )
+  ),
+  "pink": (
+    "splitter": #9a2358, //Section Splitter
+    "splitter-dark": #200d16, // Section Splitter
+    "gradient": #200e16, // Card Gradient Color
+  ),
+  "purple-blue": (
+    "background": #121b41 // Section Splitter Background + Card Gradient Color
+  )
+);
+*/

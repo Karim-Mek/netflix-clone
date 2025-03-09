@@ -1,0 +1,79 @@
+// @use "sass:map";
+@import "../abstracts/theme";
+
+// @font-face {
+//   font-family: "Babas Neue";
+//   src: url("/public/fonts/bebas-neue/BebasNeue.otf") format("openType");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+html,
+body,
+* {
+  margin: 0;
+  font-family: $font-pri;
+  font-size: 16px;
+  // letter-spacing: 0.25px;
+}
+
+.input,
+select {
+  padding: 0.5rem;
+  border: solid 1px $clr-gray-input-border;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  outline-offset: 0.125rem;
+  color: white;
+}
+
+.input {
+  &::placeholder {
+    color: $clr-gray-input-placeholder;
+    position: absolute;
+    transition:
+      translate 0.2s ease-in,
+      font-size 0.25s ease-in;
+  }
+
+  &:focus {
+    outline: solid 2px white;
+
+    &::placeholder {
+      translate: 0 -16px;
+      font-size: 12px;
+    }
+  }
+}
+
+select option {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.button {
+  color: $clr-white;
+  background-color: $clr-red-pri;
+  padding: 1rem 1.5rem;
+  font-weight: $fw-medium;
+  border-radius: 0.25rem;
+  transition: background-color 0.4s ease-in;
+
+  &:hover {
+    background-color: $clr-red-pri-hover;
+  }
+
+  &:active {
+    background-color: $clr-red-pri-active;
+    transition: background-color 0.01s ease-in-out;
+    color: $clr-gray-footer;
+  }
+}

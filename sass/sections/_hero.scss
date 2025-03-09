@@ -1,0 +1,25 @@
+@import "../abstracts/theme";
+
+.hero-section {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6) url("/public/images/hero-image.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  min-height: 500px;
+
+  .test {
+    margin: auto;
+    display: flex;
+    column-gap: 0.5rem;
+
+    .input {
+      min-width: 240px;
+    }
+
+    .button {
+      .text {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

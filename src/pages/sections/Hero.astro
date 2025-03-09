@@ -1,0 +1,25 @@
+---
+import Button from "../../components/Button.astro";
+import Input from "../../components/Input.astro";
+import Select from "../../components/Select.astro";
+---
+
+<section class="hero-section">
+  <header>
+    <div class="__logo-container">
+      <img src="/public/images/logo.png" alt="Logo Image" />
+    </div>
+
+    <div class="__actions">
+      <Select
+        name="lang"
+        id="lang"
+        options={["العربية", "Français", "English"]}
+      />
+
+      <Button>
+        <span class="text">S'identifier</span>
+      </Button>
+    </div>
+  </header>
+</section>

@@ -1,0 +1,16 @@
+---
+const { name } = Astro.props;
+const { id } = Astro.props;
+const { options } = Astro.props;
+const { url } = Astro.props;
+---
+
+<select name={name} id={id}>
+  {
+    options.map((option: string) => (
+      <option value={option.toLowerCase()}>
+        <a href={url}>{option}</a>
+      </option>
+    ))
+  }
+</select>

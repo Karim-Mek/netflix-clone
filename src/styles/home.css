@@ -1,0 +1,48 @@
+/*
+$colors: (
+  "reds": (
+    "base": #e50914,
+    "hover": #b20710,
+    "splitter": #e10b1c
+  ),
+  "black": #000000,
+  "white": #ffffff,
+  grays: (
+    "accordion": (
+      "base": #2d2d2d,
+      "hover": #414141
+    ),
+    "arrow": (
+      "base": #1a1a1a,
+      "hover": #333333
+    )
+  ),
+  "pink": (
+    "splitter": #9a2358, //Section Splitter
+    "splitter-dark": #200d16, // Section Splitter
+    "gradient": #200e16, // Card Gradient Color
+  ),
+  "purple-blue": (
+    "background": #121b41 // Section Splitter Background + Card Gradient Color
+  )
+);
+*/
+.hero-section {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6) url("/public/images/hero-image.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  min-height: 500px;
+}
+.hero-section .test {
+  margin: auto;
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.hero-section .test .input {
+  min-width: 240px;
+}
+.hero-section .test .button .text {
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=home.css.map */
