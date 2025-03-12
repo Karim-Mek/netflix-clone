@@ -6,7 +6,7 @@ import Head from "../layouts/Head.astro";
 
 import Hero from "../sections/Hero.astro";
 import Splitter from "../sections/Splitter.astro";
-import Tendances from "../sections/Tendances.astro";
+import Tendances from "../sections/Tendances.jsx";
 ---
 
 <!doctype html>
@@ -45,7 +45,7 @@ import Tendances from "../sections/Tendances.astro";
 
       <Splitter />
 
-      <Tendances />
+      <Tendances client:visible />
     </main>
   </body>
 </html>

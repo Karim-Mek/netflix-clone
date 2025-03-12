@@ -1,20 +1,11 @@
-// @use "sass:map";
 @import "../abstracts/theme";
-
-// @font-face {
-//   font-family: "Babas Neue";
-//   src: url("/public/fonts/bebas-neue/BebasNeue.otf") format("openType");
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@import "../utilities/animations";
 
 html,
 body,
 * {
   margin: 0;
   font-family: $font-pri;
-  // font-size: 16px;
-  // letter-spacing: 0.25px;
 }
 
 ul {
@@ -130,10 +121,35 @@ a {
   opacity: 0;
 }
 
+.delete {
+  display: none;
+}
+
 .translate-left {
   translate: -150% 0;
 }
 
 .translate-right {
   translate: 150% 0;
+}
+
+// ANIMATED CLASSES
+.opacity-in {
+  animation: opacityIn 0.5s;
+}
+
+.opacity-out {
+  animation: opacityOut 0.5s;
+}
+
+.scale-up {
+  animation: scaleUp 0.2s ease-out;
+}
+
+.scale-down {
+  animation: scaleDown 0.2s ease-out;
+}
+
+.blur-down {
+  animation: blurDown 0.6s ease-out;
 }

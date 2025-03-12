@@ -1,0 +1,12 @@
+Movie Dialog:
+  - The movies titles are a bit tricky. Each movie's title's style is unique. So I will create a unique component for each movie and then put it inside the object that I will pas as a prompt to the MovieDialog component.
+
+Steps:
+- Create an empty movie object: {
+  url: image url,
+  title: react component,
+  tags: array of tags for the movie,
+  description: self explanatory,
+}
+
+- Create unique 

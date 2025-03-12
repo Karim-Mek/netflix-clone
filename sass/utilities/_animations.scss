@@ -1,0 +1,55 @@
+// ANIMATIONS
+@keyframes opacityIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    scale: 0.9;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0.9;
+  }
+}
+
+@keyframes blurDown {
+  0%,
+  30% {
+    backdrop-filter: blur(10px);
+  }
+
+  99% {
+    backdrop-filter: blur(0);
+  }
+
+  100% {
+    backdrop-filter: blur(0);
+  }
+}
