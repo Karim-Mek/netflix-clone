@@ -1,0 +1,22 @@
+---
+const { isOpen } = Astro.props;
+---
+
+<dialog class="movie-dialog" open={isOpen}>
+  <p>This is a dialog</p>
+</dialog>
+
+<style>
+  .movie-dialog {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    width: 98%;
+    min-height: 200px;
+    border: solid 1px;
+    border-radius: 0.25rem;
+    /* left: 4%; */
+    background-color: red;
+    color: white;
+  }
+</style>

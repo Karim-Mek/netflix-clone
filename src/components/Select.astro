@@ -5,12 +5,18 @@ const { options } = Astro.props;
 const { url } = Astro.props;
 ---
 
-<select name={name} id={id}>
-  {
-    options.map((option: string) => (
-      <option value={option.toLowerCase()}>
-        <a href={url}>{option}</a>
-      </option>
-    ))
-  }
-</select>
+<div class="select-container" style="position: relative;">
+  <div style="position: absolute; top: 20%; left: 10%; color: white">
+    <slot />
+  </div>
+
+  <select name={name} id={id} style="padding-left: 2rem;">
+    {
+      options.map((option: string) => (
+        <option value={option.toLowerCase()}>
+          <a href={url}>{option}</a>
+        </option>
+      ))
+    }
+  </select>
+</div>

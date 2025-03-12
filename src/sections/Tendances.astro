@@ -1,0 +1,144 @@
+---
+import MovieDialog from "/src/components/MovieDialog.astro";
+
+const movies = [
+  { url: "/public/images/movies/squid-game.jpg", number: "1" },
+  { url: "/public/images/movies/the-night-agent.jpg", number: "2" },
+  { url: "/public/images/movies/back-in-action.jpg", number: "3" },
+  { url: "/public/images/movies/zero-day.jpg", number: "4" },
+  { url: "/public/images/movies/the-recruit.jpg", number: "5" },
+  { url: "/public/images/movies/vikings.jpg", number: "6" },
+  { url: "/public/images/movies/demon-city.jpg", number: "7" },
+  { url: "/public/images/movies/uncharted.png", number: "8" },
+  { url: "/public/images/movies/la-casa-de-papel.jpg", number: "9" },
+  { url: "/public/images/movies/sakamoto-days.jpg", number: "10" },
+];
+---
+
+<section class="tendances-section">
+  <h3>Tendances actuelles</h3>
+
+  <div class="container">
+    <button class="prev">
+      <span>
+        <i class="fa-solid fa-chevron-left fa-xl"></i>
+      </span>
+    </button>
+
+    <button class="next">
+      <span>
+        <i class="fa-solid fa-chevron-right fa-xl"></i>
+      </span>
+    </button>
+
+    <div class="wrapper">
+      <ul class="movies-list">
+        {
+          movies.map((movie, index) => (
+            <li
+              class="card movie-card movie-button"
+              style={"background-image: url(" + movie.url + ");"}
+            >
+              <span>{movie.number}</span>
+            </li>
+          ))
+        }
+
+        <!-- <li class="card movie-card movie-button">
+          <span>1</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>2</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>3</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>4</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>5</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>6</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>7</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>8</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>9</span>
+        </li>
+        <li class="card movie-card movie-button">
+          <span>10</span>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+
+  <MovieDialog isOpen={false} />
+</section>
+
+<script>
+  // VARIABLES
+  const wrapper = document.querySelector(".wrapper");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  const moviesBtns = document.querySelectorAll(".movie-button");
+
+  let isOpen = false;
+
+  let scrollAmount = 450;
+
+  if (window.innerWidth >= 1280) {
+    scrollAmount = 550;
+
+    console.log(scrollAmount);
+  }
+
+  // LOGIC
+
+  function updateButtons() {
+    if (wrapper.scrollLeft === 0) {
+      prev.classList.add("hide");
+      prev.classList.add("translate-left");
+    } else {
+      prev.classList.contains("hide") && prev.classList.remove("hide");
+      prev.classList.contains("translate-left") &&
+        prev.classList.remove("translate-left");
+    }
+
+    if (wrapper.scrollLeft + wrapper.clientWidth === wrapper.scrollWidth) {
+      next.classList.add("hide");
+      next.classList.add("translate-right");
+    } else {
+      next.classList.contains("hide") && next.classList.remove("hide");
+      next.classList.contains("translate-right") &&
+        next.classList.remove("translate-right");
+    }
+  }
+
+  updateButtons();
+
+  // EVENTS
+  prev.addEventListener("click", () => {
+    wrapper.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    wrapper.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+
+  wrapper.addEventListener("scroll", updateButtons);
+
+  // Movies Buttons
+  moviesBtns.forEach((movieButton) => {
+    movieButton.addEventListener("click", () => {
+      console.log(movieButton);
+
+      isOpen = true;
+    });
+  });
+</script>

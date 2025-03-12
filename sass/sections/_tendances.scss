@@ -1,0 +1,145 @@
+@import "../abstracts/theme";
+
+.tendances-section {
+  position: relative;
+  background-size: 10% 10%;
+  background-repeat: no-repeat;
+  background: linear-gradient(transparent, black 100px);
+  color: white;
+  margin-top: -9rem;
+  padding: 2rem 2rem 6rem;
+
+  @media screen and (min-width: 960px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+
+  h3 {
+    font-weight: $fw-medium;
+  }
+
+  .container {
+    position: relative;
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 0rem;
+      z-index: 1;
+      background-color: black;
+      color: white;
+      border: none;
+      width: 3rem;
+      height: 11rem;
+      display: flex;
+      align-items: center;
+      transition:
+        0.4s opacity ease,
+        0.6s translate ease;
+
+      span {
+        padding: 0 0.5rem;
+        border-radius: 0.625rem;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        background-color: $clr-gray-arr;
+        // transition: ;
+
+        &:hover {
+          background-color: $clr-gray-arr-hover;
+        }
+
+        @media screen and (min-width: 960px) {
+          height: 60%;
+        }
+        @media screen and (min-width: 1280px) {
+          height: 50%;
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        height: 14rem;
+      }
+      @media screen and (min-width: 1280px) {
+        height: 15.75rem;
+      }
+    }
+
+    .next {
+      right: 0;
+      padding: 0.75rem;
+    }
+
+    .wrapper {
+      position: relative;
+      height: 240px;
+      overflow-x: scroll;
+
+      // Hide scrollbar without disabling functionality:
+      -ms-overflow-style: none; // For IE and Edge
+      scrollbar-width: none; // For Firefox
+
+      // For Chrome, Opera...
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .movies-list {
+        position: absolute;
+        display: flex;
+        column-gap: 1.25rem;
+        padding: 0 1rem;
+
+        @media screen and (min-width: 960px) {
+          column-gap: 2.75rem;
+        }
+
+        .movie-card {
+          cursor: pointer;
+          width: 7rem;
+          height: 9.8rem;
+          margin-top: 1rem;
+          // background: url("/public/images/movies/scream-image.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          align-items: center;
+          transition: scale 0.4s ease;
+
+          span {
+            // font-family: "Roboto", sans-serif;
+            color: black;
+            margin-left: -0.5rem;
+            margin-top: 5rem;
+            font-size: 4rem;
+            font-weight: $fw-bold;
+
+            -webkit-text-fill-color: black;
+            -webkit-text-stroke: 0.1rem white;
+          }
+
+          @media screen and (min-width: 960px) {
+            width: 8.75rem;
+            height: 12.25rem;
+            font-size: 5rem;
+          }
+          @media screen and (min-width: 1280px) {
+            width: 11.25rem;
+            height: 15.75rem;
+            font-size: 6.25rem;
+          }
+
+          &:hover {
+            scale: 105%;
+          }
+        }
+      }
+    }
+  }
+}

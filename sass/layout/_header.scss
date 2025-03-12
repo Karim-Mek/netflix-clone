@@ -1,0 +1,37 @@
+.landing-header {
+  margin: auto;
+  padding: 1.5rem 1.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 960px) {
+    padding: 1rem 5rem;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 1rem 10rem;
+  }
+
+  &__logo-container {
+    img {
+      width: 100px;
+
+      @media screen and (min-width: 960px) {
+        width: 150px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+
+    img {
+      width: 20px !important;
+    }
+  }
+}

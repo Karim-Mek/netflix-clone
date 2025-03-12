@@ -1,0 +1,31 @@
+@import "../abstracts/theme";
+
+.section-splitter {
+  .layer-1,
+  .layer-2 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    /* update the 85% to control the curvature
+       you can also update the 50% to control the position
+    */
+    clip-path: ellipse(95% 100% at 50% 100%);
+  }
+
+  .layer-1 {
+    background: linear-gradient(
+      to right,
+      rgba(33, 13, 22, 1) 16%,
+      rgba(184, 40, 105, 1),
+      rgba(229, 9, 20, 1),
+      rgba(184, 40, 105, 1),
+      rgba(33, 13, 22, 1) 84%
+    );
+    margin-top: -4rem;
+  }
+  .layer-2 {
+    background: radial-gradient(120% 470% at 50% -420%, rgba(64, 97, 231, 0.6) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    margin-top: -12rem;
+  }
+}

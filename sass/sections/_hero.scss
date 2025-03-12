@@ -1,24 +1,79 @@
 @import "../abstracts/theme";
 
 .hero-section {
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.6) url("/public/images/hero-image.jpg");
+  z-index: 2;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.75) url("/public/images/hero-image.jpg");
   background-size: cover;
   background-blend-mode: multiply;
-  min-height: 500px;
+  min-height: 60vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-position: center;
 
-  .test {
-    margin: auto;
+  &__container {
     display: flex;
-    column-gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 36.75rem;
 
-    .input {
-      min-width: 240px;
+    .info {
+      h1 {
+        text-align: center;
+
+        @media screen and (min-width: 1280px) {
+          line-height: 5rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      p {
+        text-align: center;
+        font-size: 0.96875rem;
+        font-weight: $fw-medium;
+
+        &:first-of-type {
+          margin-bottom: 1rem;
+
+          @media screen and (min-width: 1280px) {
+            font-size: 1.25rem;
+          }
+        }
+      }
     }
 
-    .button {
-      .text {
-        margin-right: 0.5rem;
+    .actions {
+      padding: 1rem 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1.5rem;
+
+      @media screen and (min-width: 600px) {
+        flex-direction: row;
+        column-gap: 0.5rem;
+
+        .input {
+          width: 60%;
+        }
+      }
+
+      .input {
+        padding: 0.75rem 1rem;
+        max-width: 85%;
+      }
+
+      .button-container {
+        .button {
+          padding: 0.75rem 1rem;
+          .text {
+            margin-right: 0.5rem;
+          }
+        }
       }
     }
   }

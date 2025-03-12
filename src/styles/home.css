@@ -1,3 +1,41 @@
+.landing-header {
+  margin: auto;
+  padding: 1.5rem 1.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 960px) {
+  .landing-header {
+    padding: 1rem 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .landing-header {
+    padding: 1rem 10rem;
+  }
+}
+.landing-header__logo-container img {
+  width: 100px;
+}
+@media screen and (min-width: 960px) {
+  .landing-header__logo-container img {
+    width: 150px;
+  }
+}
+.landing-header__actions {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+.landing-header__actions img {
+  width: 20px !important;
+}
+
 /*
 $colors: (
   "reds": (
@@ -28,21 +66,295 @@ $colors: (
 );
 */
 .hero-section {
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.6) url("/public/images/hero-image.jpg");
+  z-index: 2;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.75) url("/public/images/hero-image.jpg");
   background-size: cover;
   background-blend-mode: multiply;
-  min-height: 500px;
-}
-.hero-section .test {
-  margin: auto;
+  min-height: 60vh;
+  color: white;
   display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  justify-content: center;
+  background-position: center;
 }
-.hero-section .test .input {
-  min-width: 240px;
+.hero-section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 36.75rem;
 }
-.hero-section .test .button .text {
+.hero-section__container .info h1 {
+  text-align: center;
+}
+@media screen and (min-width: 1280px) {
+  .hero-section__container .info h1 {
+    line-height: 5rem;
+    margin-bottom: 1rem;
+  }
+}
+.hero-section__container .info p {
+  text-align: center;
+  font-size: 0.96875rem;
+  font-weight: 500;
+}
+.hero-section__container .info p:first-of-type {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  .hero-section__container .info p:first-of-type {
+    font-size: 1.25rem;
+  }
+}
+.hero-section__container .actions {
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  .hero-section__container .actions {
+    flex-direction: row;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+  .hero-section__container .actions .input {
+    width: 60%;
+  }
+}
+.hero-section__container .actions .input {
+  padding: 0.75rem 1rem;
+  max-width: 85%;
+}
+.hero-section__container .actions .button-container .button {
+  padding: 0.75rem 1rem;
+}
+.hero-section__container .actions .button-container .button .text {
   margin-right: 0.5rem;
+}
+
+/*
+$colors: (
+  "reds": (
+    "base": #e50914,
+    "hover": #b20710,
+    "splitter": #e10b1c
+  ),
+  "black": #000000,
+  "white": #ffffff,
+  grays: (
+    "accordion": (
+      "base": #2d2d2d,
+      "hover": #414141
+    ),
+    "arrow": (
+      "base": #1a1a1a,
+      "hover": #333333
+    )
+  ),
+  "pink": (
+    "splitter": #9a2358, //Section Splitter
+    "splitter-dark": #200d16, // Section Splitter
+    "gradient": #200e16, // Card Gradient Color
+  ),
+  "purple-blue": (
+    "background": #121b41 // Section Splitter Background + Card Gradient Color
+  )
+);
+*/
+.section-splitter .layer-1,
+.section-splitter .layer-2 {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  aspect-ratio: 3/2;
+  /* update the 85% to control the curvature
+     you can also update the 50% to control the position
+  */
+  -webkit-clip-path: ellipse(95% 100% at 50% 100%);
+          clip-path: ellipse(95% 100% at 50% 100%);
+}
+.section-splitter .layer-1 {
+  background: linear-gradient(to right, rgb(33, 13, 22) 16%, rgb(184, 40, 105), rgb(229, 9, 20), rgb(184, 40, 105), rgb(33, 13, 22) 84%);
+  margin-top: -4rem;
+}
+.section-splitter .layer-2 {
+  background: radial-gradient(120% 470% at 50% -420%, rgba(64, 97, 231, 0.6) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+  margin-top: -12rem;
+}
+
+/*
+$colors: (
+  "reds": (
+    "base": #e50914,
+    "hover": #b20710,
+    "splitter": #e10b1c
+  ),
+  "black": #000000,
+  "white": #ffffff,
+  grays: (
+    "accordion": (
+      "base": #2d2d2d,
+      "hover": #414141
+    ),
+    "arrow": (
+      "base": #1a1a1a,
+      "hover": #333333
+    )
+  ),
+  "pink": (
+    "splitter": #9a2358, //Section Splitter
+    "splitter-dark": #200d16, // Section Splitter
+    "gradient": #200e16, // Card Gradient Color
+  ),
+  "purple-blue": (
+    "background": #121b41 // Section Splitter Background + Card Gradient Color
+  )
+);
+*/
+.tendances-section {
+  position: relative;
+  background-size: 10% 10%;
+  background-repeat: no-repeat;
+  background: linear-gradient(transparent, black 100px);
+  color: white;
+  margin-top: -9rem;
+  padding: 2rem 2rem 6rem;
+}
+@media screen and (min-width: 960px) {
+  .tendances-section {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tendances-section {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
+.tendances-section h3 {
+  font-weight: 500;
+}
+.tendances-section .container {
+  position: relative;
+}
+.tendances-section .container .prev,
+.tendances-section .container .next {
+  position: absolute;
+  top: 0rem;
+  z-index: 1;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 3rem;
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  transition: 0.4s opacity ease, 0.6s translate ease;
+}
+.tendances-section .container .prev span,
+.tendances-section .container .next span {
+  padding: 0 0.5rem;
+  border-radius: 0.625rem;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+}
+.tendances-section .container .prev span:hover,
+.tendances-section .container .next span:hover {
+  background-color: #333333;
+}
+@media screen and (min-width: 960px) {
+  .tendances-section .container .prev span,
+  .tendances-section .container .next span {
+    height: 60%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tendances-section .container .prev span,
+  .tendances-section .container .next span {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tendances-section .container .prev,
+  .tendances-section .container .next {
+    height: 14rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tendances-section .container .prev,
+  .tendances-section .container .next {
+    height: 15.75rem;
+  }
+}
+.tendances-section .container .next {
+  right: 0;
+  padding: 0.75rem;
+}
+.tendances-section .container .wrapper {
+  position: relative;
+  height: 240px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tendances-section .container .wrapper::-webkit-scrollbar {
+  display: none;
+}
+.tendances-section .container .wrapper .movies-list {
+  position: absolute;
+  display: flex;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 960px) {
+  .tendances-section .container .wrapper .movies-list {
+    -moz-column-gap: 2.75rem;
+         column-gap: 2.75rem;
+  }
+}
+.tendances-section .container .wrapper .movies-list .movie-card {
+  cursor: pointer;
+  width: 7rem;
+  height: 9.8rem;
+  margin-top: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  transition: scale 0.4s ease;
+}
+.tendances-section .container .wrapper .movies-list .movie-card span {
+  color: black;
+  margin-left: -0.5rem;
+  margin-top: 5rem;
+  font-size: 4rem;
+  font-weight: 700;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 0.1rem white;
+}
+@media screen and (min-width: 960px) {
+  .tendances-section .container .wrapper .movies-list .movie-card {
+    width: 8.75rem;
+    height: 12.25rem;
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tendances-section .container .wrapper .movies-list .movie-card {
+    width: 11.25rem;
+    height: 15.75rem;
+    font-size: 6.25rem;
+  }
+}
+.tendances-section .container .wrapper .movies-list .movie-card:hover {
+  scale: 105%;
 }/*# sourceMappingURL=home.css.map */

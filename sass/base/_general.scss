@@ -13,24 +13,62 @@ body,
 * {
   margin: 0;
   font-family: $font-pri;
-  font-size: 16px;
+  // font-size: 16px;
   // letter-spacing: 0.25px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2rem;
+
+  @media screen and (min-width: 960px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 3.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.125rem;
+
+  @media screen and (min-width: 960px) {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  font-size: 1rem;
 }
 
 .input,
 select {
-  padding: 0.5rem;
   border: solid 1px $clr-gray-input-border;
   border-radius: 0.25rem;
   background-color: rgba(255, 255, 255, 0.06);
   outline-offset: 0.125rem;
   color: white;
+  font-size: 1rem;
 }
 
 .input {
+  padding: 1rem;
+  width: 100%;
+  margin: 0;
+
   &::placeholder {
+    font-weight: $fw-medium;
     color: $clr-gray-input-placeholder;
     position: absolute;
+    font-size: 0.875rem;
     transition:
       translate 0.2s ease-in,
       font-size 0.25s ease-in;
@@ -46,8 +84,12 @@ select {
   }
 }
 
-select option {
-  color: black;
+select {
+  padding: 0.375rem;
+
+  option {
+    color: black;
+  }
 }
 
 a {
@@ -62,7 +104,7 @@ a {
 .button {
   color: $clr-white;
   background-color: $clr-red-pri;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-weight: $fw-medium;
   border-radius: 0.25rem;
   transition: background-color 0.4s ease-in;
@@ -76,4 +118,22 @@ a {
     transition: background-color 0.01s ease-in-out;
     color: $clr-gray-footer;
   }
+}
+
+//------------------------
+// Classes:
+.card {
+  border-radius: 0.5rem;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.translate-left {
+  translate: -150% 0;
+}
+
+.translate-right {
+  translate: 150% 0;
 }

@@ -1,0 +1,31 @@
+---
+import Button from "../components/Button.astro";
+import Input from "../components/Input.astro";
+import Select from "../components/Select.astro";
+---
+
+<section class="hero-section">
+  <div class="hero-section__container">
+    <div class="info">
+      <h1>Films et séries en illimité, et bien plus</h1>
+
+      <p>À partir de 3,99 $US. Annulable à tout moment.</p>
+
+      <p>
+        Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous
+        abonner ou réactiver votre abonnement.
+      </p>
+    </div>
+
+    <div class="actions">
+      <Input placeholder="Adresse e-mail" />
+
+      <div class="button-container">
+        <Button>
+          <span class="text">Commencer</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
