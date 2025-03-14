@@ -1,0 +1,72 @@
+@import "../abstracts/theme";
+
+.faq-section {
+  padding: 0 2rem 1rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-list {
+    .accordion-item {
+      .question-card {
+        margin-bottom: 0.5rem;
+
+        h3 {
+          button {
+            color: white;
+            border: none;
+            text-align: start;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1rem;
+            width: 100%;
+            position: relative;
+            font-size: 1rem;
+            font-weight: $fw-medium;
+            display: flex;
+            justify-content: space-between;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            @media screen and (min-width: 960px) {
+              padding: 1.5rem;
+            }
+            @media screen and (min-width: 1280px) {
+              font-size: 1.125rem;
+            }
+
+            i {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .answer-card {
+        background-color: rgba(255, 255, 255, 0.2);
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        padding: 1.5rem 1.25rem;
+        height: 0;
+        display: none;
+        transition: height 1s ease;
+
+        &.open {
+          height: max-content;
+          display: block;
+        }
+
+        .answers-container {
+          p {
+            font-weight: $fw-medium;
+            margin-bottom: -0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

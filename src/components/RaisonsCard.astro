@@ -1,0 +1,19 @@
+---
+const {
+  heading,
+  headingClasses = "",
+  text,
+  textClasses = "",
+  iconUrl,
+} = Astro.props;
+---
+
+<div class="raison-card">
+  <div class="info-container">
+    <h3 class={headingClasses}>{heading}</h3>
+    <p class={textClasses}>{text}</p>
+  </div>
+  <div class="icon-container">
+    <img src={iconUrl} alt="Card Icon" />
+  </div>
+</div>

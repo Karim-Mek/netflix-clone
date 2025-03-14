@@ -23,8 +23,16 @@ $clr-red-pri-active: #831010;
 $clr-black: #000000;
 $clr-white: #ffffff;
 
+$clr-bg: #0f0f0f;
+
+// Button Gray:
+$clr-gray-signup-bg-hover: #b5b5b4;
+$clr-gray-signup-bg-active: #b7b7b6;
+$clr-gray-signup-color-active: #282828;
+
 // Input Gray:
 $clr-gray-input-border: #5e5e5e;
+$clr-gray-input-bg: #474747;
 
 // Text Gray:
 $clr-gray-text: #f8e8e9;
@@ -32,16 +40,20 @@ $clr-gray-input-placeholder: #b4b6b6;
 $clr-gray-footer: #ffffffb3;
 
 // Arrows Buttons Grays:
-$clr-gray-arr: #1a1a1a;
-$clr-gray-arr-hover: #333333;
+$clr-gray-arr: #333333;
+$clr-gray-arr-hover: #1a1a1a;
 
 // Accordion Grays:
 $clr-gray-acc: #2d2d2d;
-$clr-gray-acc-hover: #414141;
+$clr-gray-acc-hover: #3f3f3f;
+$clr-gray-acc-hover-old: #414141;
 
 // Movie Dialog Gray:
 $clr-movie-dialog-background-gray: #161616;
 $clr-gray-tag-background: #414141;
+
+// FAQ Grays:
+// $clr-gray-
 
 // Section Splitters:
 $clr-red-splitter: #e10b1c;

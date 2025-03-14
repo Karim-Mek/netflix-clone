@@ -1,4 +1,5 @@
 .landing-header {
+  // background-color: red;
   margin: auto;
   padding: 1.5rem 1.25rem;
   position: absolute;
@@ -28,7 +29,7 @@
   &__actions {
     display: flex;
     align-items: center;
-    column-gap: 0.25rem;
+    column-gap: 0.5rem;
 
     img {
       width: 20px !important;

@@ -59,7 +59,10 @@ export default function MovieDialog({
         className={"dialog-container" + " " + addedClasses}
         onClick={(e) => e.stopPropagation()}
       >
-        <i className="fa-solid fa-xmark close-button" onClick={onClose}></i>
+        {/* <i className="fa-solid fa-xmark close-button" onClick={onClose}></i> */}
+        <span class="material-symbols-outlined close-button" onClick={onClose}>
+          close
+        </span>
 
         <div className="thumb-image-container">
           <div className="thumb-overlay blur-down"></div>
@@ -69,7 +72,7 @@ export default function MovieDialog({
             alt="Movie thumb image"
           />
 
-          <img className="logo-image" src={movieObject.logo} alt="Movie Logo" />
+          {/* <img className="logo-image" src={movieObject.logo} alt="Movie Logo" /> */}
         </div>
 
         <div className="content">

@@ -53,3 +53,17 @@
     backdrop-filter: blur(0);
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    height: 0;
+  }
+
+  // 50% {
+  //   height: min-content;
+  // }
+
+  100% {
+    height: max-content;
+  }
+}

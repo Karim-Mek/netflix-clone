@@ -149,8 +149,8 @@ export default function Tendances() {
   }
 
   return (
-    <section className="tendances-section">
-      <h3>Tendances actuelles</h3>
+    <section className="tendances-section section">
+      <h2>Tendances actuelles</h2>
 
       <div className="container">
         <button className="prev">

@@ -1,0 +1,49 @@
+---
+import Select from "../components/Select.astro";
+
+const languages = ["Français", "العربية", "English"];
+---
+
+<footer class="landing-footer section">
+  <a class="contact-us-link">Des questions ? Contactez-nous.</a>
+
+  <div class="rows-container">
+    <a class="footer-row" href="#">FAQ</a>
+
+    <a class="footer-row" href="#">Centre d'aide</a>
+
+    <a class="footer-row" href="#">Compte</a>
+
+    <a class="footer-row" href="#">Presse</a>
+
+    <a class="footer-row" href="#">Relations Investisseurs</a>
+
+    <a class="footer-row" href="#">Recrutement</a>
+
+    <a class="footer-row" href="#">Modes de lecture</a>
+
+    <a class="footer-row" href="#">Conditions d'utilisation</a>
+
+    <a class="footer-row" href="#">Confidentialité</a>
+
+    <a class="footer-row" href="#">Préférences de cookies</a>
+
+    <a class="footer-row" href="#">Mentions légales</a>
+
+    <a class="footer-row" href="#">Nous contacter</a>
+
+    <a class="footer-row" href="#">Test de vitesse</a>
+
+    <a class="footer-row" href="#">Informations légales</a>
+
+    <a class="footer-row" href="#">Seulement sur Netflix</a>
+  </div>
+
+  <div class="lang-container">
+    <div class="select-container">
+      <Select name="lang" id="lang" options={languages} url="" />
+    </div>
+  </div>
+
+  <p>Netflix Algérie</p>
+</footer>

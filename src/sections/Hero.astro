@@ -1,5 +1,4 @@
 ---
-import Button from "../components/Button.astro";
 import Input from "../components/Input.astro";
 import Select from "../components/Select.astro";
 ---
@@ -18,13 +17,17 @@ import Select from "../components/Select.astro";
     </div>
 
     <div class="actions">
-      <Input placeholder="Adresse e-mail" />
+      <input
+        class="email-input input"
+        type="email"
+        placeholder="Adresse e-mail"
+      />
 
       <div class="button-container">
-        <Button>
+        <a href="#" class="button cta-button">
           <span class="text">Commencer</span>
           <i class="fa-solid fa-chevron-right"></i>
-        </Button>
+        </a>
       </div>
     </div>
   </div>

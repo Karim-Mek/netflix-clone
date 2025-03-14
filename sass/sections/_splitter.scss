@@ -25,7 +25,8 @@
     margin-top: -4rem;
   }
   .layer-2 {
-    background: radial-gradient(120% 470% at 50% -420%, rgba(64, 97, 231, 0.6) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    // background: radial-gradient(120% 470% at 50% -420%, rgba(64, 97, 231, 0.6) 80%, rgba(0, 0, 0, 0.1) 100%), $clr-bg;
+    background: $clr-bg;
     margin-top: -12rem;
   }
 }

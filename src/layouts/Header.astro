@@ -1,0 +1,32 @@
+---
+import Button from "../components/Button.astro";
+import Select from "../components/Select.astro";
+---
+
+<header class="landing-header">
+  <div class="landing-header__logo-container">
+    <img src="/public/images/logo.png" alt="Logo Image" />
+  </div>
+
+  <div class="landing-header__actions">
+    <div class="select-container">
+      <Select
+        name="lang"
+        id="lang"
+        options={["Français", "العربية", "English"]}
+      />
+      <!-- <img
+          style="width: 50px;"
+          src="/public/images/language-icon.png"
+          alt="Language Icon"
+        />
+      </Select> -->
+    </div>
+
+    <Button>
+      <a href="#" class="button sign-button">
+        <span class="text">S'identifier</span>
+      </a>
+    </Button>
+  </div>
+</header>

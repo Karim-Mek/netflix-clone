@@ -1,12 +1,14 @@
 ---
-import Button from "../components/Button.astro";
-import Select from "../components/Select.astro";
-
 import Head from "../layouts/Head.astro";
 
+import Header from "../layouts/Header.astro";
 import Hero from "../sections/Hero.astro";
+import Raisons from "../sections/Raisons.astro";
 import Splitter from "../sections/Splitter.astro";
 import Tendances from "../sections/Tendances.jsx";
+import FAQ from "../sections/FAQ";
+import CTA from "../sections/CTA.astro";
+import Footer from "../sections/Footer.astro";
 ---
 
 <!doctype html>
@@ -16,36 +18,22 @@ import Tendances from "../sections/Tendances.jsx";
   </Head>
 
   <body>
-    <header class="landing-header">
-      <div class="landing-header__logo-container">
-        <img src="/public/images/logo.png" alt="Logo Image" />
-      </div>
+    <Header />
 
-      <div class="landing-header__actions">
-        <Select
-          name="lang"
-          id="lang"
-          options={["العربية", "Français", "English"]}
-        >
-          <img
-            style="width: 50px;"
-            src="/public/images/language-icon.png"
-            alt="Language Icon"
-          />
-        </Select>
-
-        <Button>
-          <span class="text">S'identifier</span>
-        </Button>
-      </div>
-    </header>
-
-    <main class="page-main">
+    <main class="page-main home-page">
       <Hero />
 
       <Splitter />
 
       <Tendances client:visible />
+
+      <Raisons />
+
+      <FAQ client:visible />
+
+      <CTA />
     </main>
+
+    <Footer />
   </body>
 </html>

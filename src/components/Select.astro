@@ -10,7 +10,7 @@ const { url } = Astro.props;
     <slot />
   </div>
 
-  <select name={name} id={id} style="padding-left: 2rem;">
+  <select class="select" name={name} id={id}>
     {
       options.map((option: string) => (
         <option value={option.toLowerCase()}>
