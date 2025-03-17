@@ -1,13 +1,14 @@
 @import "../abstracts/theme";
 
 .tendances-section {
-  position: relative;
+  // position: relative;
   background-size: 10% 10%;
   background-repeat: no-repeat;
   background: linear-gradient(transparent, $clr-bg 100px);
   color: white;
-  margin-top: -9rem;
-  padding: 2rem 2rem 0;
+  // padding: 2rem 2rem 0;
+  // padding: 0;
+  padding-top: 0.25rem;
 
   .container {
     position: relative;
@@ -16,17 +17,19 @@
     .next {
       position: absolute;
       top: 0rem;
-      z-index: 1;
-      background-color: $clr-bg;
+      z-index: 999;
+      // background-color: $clr-bg;
+      // background: #0f0f0fc1;
+      // background: green;
       color: white;
-      border: none;
-      width: 3rem;
-      height: 11.875rem;
+      width: 2rem;
+      height: 15rem;
       display: flex;
       align-items: center;
       transition:
         0.4s opacity ease,
         0.6s translate ease;
+      border: none;
 
       @media screen and (min-width: 960px) {
         height: 14.375rem;
@@ -36,13 +39,12 @@
       }
 
       span {
-        padding: 0 0.5rem;
+        padding: 0 0.325rem;
         border-radius: 4rem;
-        height: 75%;
+        height: 40%;
         display: flex;
         align-items: center;
         background-color: $clr-gray-arr;
-        // transition: ;
 
         &:hover {
           background-color: $clr-gray-arr-hover;
@@ -57,22 +59,27 @@
       }
     }
 
+    .prev {
+      background: linear-gradient(to right, $clr-bg 10%, transparent 80%);
+    }
+
     .next {
-      right: 0;
+      right: 0rem;
       padding: 0.75rem;
+      background: linear-gradient(to left, $clr-bg 10%, transparent 80%);
     }
 
     .wrapper {
       position: relative;
-      height: 11.875rem;
+      height: 15rem;
       overflow-x: scroll;
 
       @media screen and (min-width: 960px) {
-        height: 14.375rem;
+        height: 18rem;
       }
-      @media screen and (min-width: 1280px) {
-        height: 17.5rem;
-      }
+      // @media screen and (min-width: 1280px) {
+      //   height: 17.5rem;
+      // }
 
       // Hide scrollbar without disabling functionality:
       -ms-overflow-style: none; // For IE and Edge
@@ -86,8 +93,8 @@
       .movies-list {
         position: absolute;
         display: flex;
-        column-gap: 1.25rem;
-        padding: 0 1rem;
+        column-gap: 2rem;
+        padding: 0 0 0 1rem;
 
         @media screen and (min-width: 960px) {
           column-gap: 2.75rem;
@@ -95,13 +102,13 @@
 
         .movie-card {
           cursor: pointer;
-          width: 7rem;
-          height: 9.8rem;
+          width: 6.5rem;
+          height: 13rem;
           margin-top: 1rem;
-          // background: url("/public/images/movies/scream-image.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
+          border-radius: 1rem;
           display: flex;
           align-items: center;
           transition: scale 0.4s ease;
@@ -111,13 +118,13 @@
           }
 
           @media screen and (min-width: 960px) {
-            width: 8.75rem;
-            height: 12.25rem;
+            width: 8rem;
+            height: 16rem;
             font-size: 5rem;
           }
           @media screen and (min-width: 1280px) {
-            width: 11.25rem;
-            height: 15.75rem;
+            width: 8.1875rem;
+            height: 16.375rem;
             font-size: 6.25rem;
           }
 
@@ -125,8 +132,8 @@
             // font-family: "Roboto", sans-serif;
             color: black;
             margin-left: -0.5rem;
-            margin-top: 5rem;
-            font-size: 4rem;
+            margin-top: -8.75rem;
+            font-size: 3rem;
             font-weight: $fw-bold;
 
             -webkit-text-fill-color: black;
@@ -138,14 +145,19 @@
   }
 
   .movie-dialog {
-    z-index: 100;
     position: fixed;
+    // border: solid green;
+    z-index: 100;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 1rem;
     width: 100vw;
     height: 100vh;
+    // margin-left: ;
+    // width: 100vw;
+    // height: 100vh;
+    background-color: red;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(1px);
     display: flex;
@@ -157,7 +169,7 @@
       // top: 20%;
       left: 0;
       right: 0;
-      width: 99%;
+      width: 100%;
       min-height: 200px;
       border: solid 2px $clr-gray-input-border;
       border-radius: 0.5rem;
@@ -199,7 +211,6 @@
 
     .thumb-image-container {
       height: 304.875px;
-      // width: 100%;
       position: relative;
 
       .thumb-overlay {
@@ -209,8 +220,6 @@
         right: 0;
         height: 100%;
         z-index: 10;
-        // opacity: 1 !important;
-        // display: block !important;
       }
 
       .thumb-image {

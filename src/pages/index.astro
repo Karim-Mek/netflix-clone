@@ -2,7 +2,7 @@
 import Head from "../layouts/Head.astro";
 
 import Header from "../layouts/Header.astro";
-import Hero from "../sections/Hero.astro";
+import Hero from "../sections/Hero.jsx";
 import Raisons from "../sections/Raisons.astro";
 import Splitter from "../sections/Splitter.astro";
 import Tendances from "../sections/Tendances.jsx";
@@ -18,16 +18,15 @@ import Footer from "../sections/Footer.astro";
   </Head>
 
   <body>
-    <Header />
-
     <main class="page-main home-page">
-      <Hero />
+      <div class="common-container">
+        <Header />
 
-      <Splitter />
-
-      <Tendances client:visible />
-
-      <Raisons />
+        <Hero client:visible />
+        <!-- <Splitter /> -->
+        <Tendances client:visible />
+        <Raisons />
+      </div>
 
       <FAQ client:visible />
 

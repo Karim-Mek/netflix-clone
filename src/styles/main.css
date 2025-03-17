@@ -103,11 +103,17 @@ li {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 @media screen and (min-width: 960px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -263,7 +269,6 @@ a {
 
 .section {
   padding: 2rem 2rem;
-  background-color: #0f0f0f !important;
   color: white;
 }
 @media screen and (min-width: 960px) {

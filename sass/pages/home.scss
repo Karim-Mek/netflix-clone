@@ -1,5 +1,3 @@
-// @import "../abstracts/theme";
-
 @use "../layout/header";
 @use "../sections/hero";
 @use "../sections/splitter";
@@ -9,6 +7,10 @@
 @use "../sections/cta";
 @use "../layout/footer";
 
-// .home-page {
-//   background: $clr-bg !important;
-// }
+@import "../abstracts/theme";
+
+.common-container {
+  position: relative;
+  border: solid transparent;
+  background: $clr-bg;
+}
