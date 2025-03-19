@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import MovieDialog from "/src/components/MovieDialog.jsx";
+import Modal from "../components/Modal";
 
 export default function Tendances() {
   const movies = [
@@ -126,6 +127,18 @@ export default function Tendances() {
     });
   }
 
+  // Open Modal
+  function openModal(movie) {
+    setMovieObject(movie);
+    setIsOpen(true);
+  }
+
+  // Close Modal
+  function closeModal() {
+    setMovieObject({});
+    setIsOpen(false);
+  }
+
   // Open Dialog
   function openDialog(movie) {
     setMovieObject(movie);
@@ -145,48 +158,80 @@ export default function Tendances() {
   }
 
   return (
-    <section className="tendances-section section">
-      <h2>Tendances actuelles</h2>
+    <>
+      <section className="tendances-section section">
+        <h2>Tendances actuelles</h2>
 
-      <div className="container">
-        <button className="prev" ref={prevRef} onClick={() => scroll(-1)}>
-          <span>
-            <i className="fa-solid fa-chevron-left fa-xl"></i>
-          </span>
-        </button>
+        <div className="container">
+          <button className="prev" ref={prevRef} onClick={() => scroll(-1)}>
+            <span>
+              <i className="fa-solid fa-chevron-left fa-xl"></i>
+            </span>
+          </button>
 
-        <button className="next" ref={nextRef} onClick={() => scroll(1)}>
-          <span>
-            <i className="fa-solid fa-chevron-right fa-xl"></i>
-          </span>
-        </button>
+          <button className="next" ref={nextRef} onClick={() => scroll(1)}>
+            <span>
+              <i className="fa-solid fa-chevron-right fa-xl"></i>
+            </span>
+          </button>
 
-        <div className="wrapper" ref={wrapperRef}>
-          <ul className="movies-list">
-            {movies.map((movie, index) => (
-              <li
-                key={index}
-                className="card movie-card movie-button"
-                style={{ backgroundImage: "url(" + movie.image + ")" }}
-                onClick={() => openDialog(movie)}
-              >
-                <span>{index + 1}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="wrapper" ref={wrapperRef}>
+            <ul className="movies-list">
+              {movies.map((movie, index) => (
+                <li
+                  key={index}
+                  className="card movie-card movie-button"
+                  style={{ backgroundImage: "url(" + movie.image + ")" }}
+                  onClick={() => openModal(movie)}
+                >
+                  <span>{index + 1}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+        <Modal isOpen={isOpen} onClose={closeModal}>
+          <div className="thumb-container">
+            <div
+              className="image-container blur-down"
+              style={{ background: "url(" + movieObject.image + ")" }}
+            ></div>
+            <div className="thumb-overlay"></div>
+            <div className="thumb-gradient-bg"></div>
+            <div className="logo-container">
+              <img
+                className="logo-image"
+                src={movieObject.logo}
+                alt="Movie Logo"
+              />
+            </div>
+          </div>
 
-      {isOpen && (
-        <>
-          <MovieDialog
-            isOpen={isOpen}
-            onClose={closeDialog}
-            addedClasses={movieDialogAddedClasses}
-            movieObject={movieObject}
-          />
-        </>
-      )}
-    </section>
+          <div className="content">
+            <ul className="movie-tags">
+              {isOpen &&
+                movieObject.tags.map((tag) => (
+                  <li className="movie-tag">{tag}</li>
+                ))}
+            </ul>
+
+            <p className="movie-description">{movieObject.description}</p>
+
+            <form className="actions-form">
+              <input
+                className="email-input input"
+                type="email"
+                placeholder="Adresse e-mail"
+              />
+
+              <button className="cta-button button">
+                <span className="text">Commencer</span>
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+          </div>
+        </Modal>
+      </section>
+    </>
   );
 }

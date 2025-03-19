@@ -284,6 +284,51 @@ a {
   }
 }
 
+.actions-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  pointer-events: auto;
+}
+@media screen and (min-width: 600px) {
+  .actions-form {
+    flex-direction: row;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+}
+.actions-form input {
+  padding: 0.75rem 1rem 0.5rem;
+  background-color: rgba(71, 71, 71, 0.9019607843);
+}
+@media screen and (min-width: 600px) {
+  .actions-form input {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 960px) {
+  .actions-form input {
+    padding: 1.125rem 1rem 0.875rem;
+  }
+}
+.actions-form .cta-button {
+  padding: 0.75rem 1rem;
+}
+@media screen and (min-width: 600px) {
+  .actions-form .cta-button {
+    font-size: 1.25rem;
+    width: 14.75rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .actions-form .cta-button {
+    padding: 0.875rem 1rem;
+  }
+}
+.actions-form .cta-button .text {
+  margin-right: 1rem;
+}
+
 .card {
   border-radius: 0.5rem;
 }

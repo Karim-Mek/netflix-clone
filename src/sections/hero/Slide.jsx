@@ -31,17 +31,15 @@ export default function Slide({
 
   useEffect(() => {
     handleSlideStyle();
-
-    console.log(transition ? "true" : "false");
   }, [transition, opacity]);
 
   function handleSlideStyle() {
     if (opacity === 0 || !transition) {
       setSlideClasses("slide fadeout-translate");
 
-      // setTimeout(() => {
-      //   setSlideClasses("delete");
-      // }, 2000);
+      setTimeout(() => {
+        setSlideClasses("delete");
+      }, 1000);
     } else {
       setSlideClasses("slide active-transition");
     }
@@ -94,7 +92,7 @@ export default function Slide({
               abonner ou réactiver votre abonnement.
             </small>
           </p>
-          <form>
+          <form className="actions-form">
             <input
               className="email-input input"
               type="email"

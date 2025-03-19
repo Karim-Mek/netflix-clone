@@ -76,84 +76,86 @@ export default function Hero() {
   }
 
   return (
-    <section className="hero-section">
-      <button className="prev-button" onClick={goPrev}>
-        <i className="fa-solid fa-chevron-left"></i>
-      </button>
-      <button className="next-button" onClick={goNext}>
-        <i className="fa-solid fa-chevron-right"></i>
-      </button>
+    <>
+      <section className="hero-section">
+        <button className="prev-button" onClick={goPrev}>
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
+        <button className="next-button" onClick={goNext}>
+          <i className="fa-solid fa-chevron-right"></i>
+        </button>
 
-      <div className="slideshow-container">
-        <Slide
-          bgImage="/images/hero-image.jpg"
-          bgImageHeight="100%"
-          maskImg="linear-gradient(white 10%, transparent 100%)"
-          heading="Films et séries en illimité, et bien plus"
-          subheading="À partir de 3,99 $US. Annulable à tout moment."
-          transition={currentIndex === 1 ? 1 : 0}
-          opacity={currentIndex === 1 ? 1 : 0}
-        />
-        <Slide
-          bgImage="/images/movies/dialog/the-night-agent-dialog-background.jpg"
-          maskImg="linear-gradient(white 80%, transparent 100%)"
-          tags={["2025", "13+", "Film", "SF"]}
-          transition={currentIndex === 2 ? 1 : 0}
-          opacity={currentIndex === 2 ? 1 : 0}
-        />
-        <Slide
-          bgImage="/images/movies/dialog/squid-game-dialog-background.jpg"
-          maskImg="linear-gradient(white 80%, transparent 100%)"
-          tags={["2024", "18+", "Série", "Thrillers"]}
-          transition={currentIndex === 3 ? 1 : 0}
-          opacity={currentIndex === 3 ? 1 : 0}
-        />{" "}
-      </div>
-
-      <div className="slide-actions">
-        <div className="play-actions">
-          {isPlaying && (
-            <i
-              style={{ cursor: "pointer" }}
-              className="fa-solid fa-pause"
-              onClick={pause}
-            ></i>
-          )}
-          {!isPlaying && (
-            <i
-              style={{ cursor: "pointer" }}
-              className="fa-solid fa-play"
-              onClick={play}
-            ></i>
-          )}
+        <div className="slideshow-container">
+          <Slide
+            bgImage="/images/hero-image.jpg"
+            bgImageHeight="100%"
+            maskImg="linear-gradient(white 10%, transparent 100%)"
+            heading="Films et séries en illimité, et bien plus"
+            subheading="À partir de 3,99 $US. Annulable à tout moment."
+            transition={currentIndex === 1 ? 1 : 0}
+            opacity={currentIndex === 1 ? 1 : 0}
+          />
+          <Slide
+            bgImage="/images/movies/dialog/the-night-agent-dialog-background.jpg"
+            maskImg="linear-gradient(white 80%, transparent 100%)"
+            tags={["2025", "13+", "Film", "SF"]}
+            transition={currentIndex === 2 ? 1 : 0}
+            opacity={currentIndex === 2 ? 1 : 0}
+          />
+          <Slide
+            bgImage="/images/movies/dialog/squid-game-dialog-background.jpg"
+            maskImg="linear-gradient(white 80%, transparent 100%)"
+            tags={["2024", "18+", "Série", "Thrillers"]}
+            transition={currentIndex === 3 ? 1 : 0}
+            opacity={currentIndex === 3 ? 1 : 0}
+          />{" "}
         </div>
 
-        <div className="slides-buttons">
-          {[1, 2, 3].map((idx) => (
-            <div
-              className="button-container"
-              onClick={() => {
-                setCurrentIndex(idx);
-                stopSlideshow();
-              }}
-            >
-              <button
-                className="slide-button"
-                style={{
-                  backgroundColor:
-                    currentIndex === idx
-                      ? "rgba(255, 255, 255, 0.7)"
-                      : "rgba(255, 255, 255, 0.4)",
+        <div className="slide-actions">
+          <div className="play-actions">
+            {isPlaying && (
+              <i
+                style={{ cursor: "pointer" }}
+                className="fa-solid fa-pause"
+                onClick={pause}
+              ></i>
+            )}
+            {!isPlaying && (
+              <i
+                style={{ cursor: "pointer" }}
+                className="fa-solid fa-play"
+                onClick={play}
+              ></i>
+            )}
+          </div>
+
+          <div className="slides-buttons">
+            {[1, 2, 3].map((idx) => (
+              <div
+                className="button-container"
+                onClick={() => {
+                  setCurrentIndex(idx);
+                  stopSlideshow();
                 }}
               >
-                {currentIndex === idx && isPlaying && (
-                  <span style={{ width: timer + "%" }}></span>
-                )}
-              </button>
-            </div>
-          ))}
+                <button
+                  className="slide-button"
+                  style={{
+                    backgroundColor:
+                      currentIndex === idx
+                        ? "rgba(255, 255, 255, 0.7)"
+                        : "rgba(255, 255, 255, 0.4)",
+                  }}
+                >
+                  {currentIndex === idx && isPlaying && (
+                    <span style={{ width: timer + "%" }}></span>
+                  )}
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

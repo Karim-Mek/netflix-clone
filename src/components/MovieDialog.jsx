@@ -7,13 +7,15 @@ export default function MovieDialog({
   movieObject,
 }) {
   const dialogRef = useRef(null);
+  const dialogContainerRef = useRef(null);
+  const thumbOverlayRef = useRef(null);
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
-    // const dialogElement = document.querySelector(".movie-dialog");
-    const dialogElement = dialogRef.current;
-    const dialogContainer = document.querySelector(".dialog-container");
-    const thumbOverlay = document.querySelector(".thumb-overlay");
-    const closeButton = document.querySelector(".close-button");
+    const dialog = dialogRef.current;
+    const dialogContainer = dialogContainerRef.current;
+    const thumbOverlay = thumbOverlayRef.current;
+    const closeButton = closeButtonRef.current;
 
     const handleOutsideClick = (e) => {
       if (dialogContainer && !dialogContainer.contains(e.target)) {
@@ -29,43 +31,77 @@ export default function MovieDialog({
       }
     };
 
-    if (isOpen && dialogElement) {
-      dialogElement.showModal();
+    if (dialog && isOpen) {
+      dialog.showModal();
       document.body.style.overflow = "hidden";
 
       setTimeout(() => {
         if (thumbOverlay) thumbOverlay.style.display = "none";
       }, 400);
 
-      document.addEventListener("click", handleOutsideClick);
-      document.addEventListener("keydown", handleKeysClick);
+      setTimeout(() => {
+        document.addEventListener("click", handleOutsideClick);
+        document.addEventListener("keydown", handleKeysClick);
+      }, 200);
 
       return () => {
         document.removeEventListener("click", handleOutsideClick);
         document.removeEventListener("keydown", handleKeysClick);
 
-        dialogElement.close();
+        dialog.close();
 
         setTimeout(() => {
           document.body.style.overflow = "";
         }, 350);
       };
     }
-  }, [isOpen]);
+
+    // if (dialog) {
+    // if (isOpen && dialog) {
+    //   console.log(isOpen ? "true" : "false");
+    //   console.log(dialog);
+
+    //   dialog.showModal();
+    //   document.body.style.overflow = "hidden";
+
+    //   setTimeout(() => {
+    //     if (thumbOverlay) thumbOverlay.style.display = "none";
+    //   }, 400);
+
+    //   document.addEventListener("click", handleOutsideClick);
+    //   document.addEventListener("keydown", handleKeysClick);
+
+    //   return () => {
+    //     document.removeEventListener("click", handleOutsideClick);
+    //     document.removeEventListener("keydown", handleKeysClick);
+
+    //     dialog.close();
+
+    //     setTimeout(() => {
+    //       document.body.style.overflow = "";
+    //     }, 350);
+    //   };
+    // }
+  }, []);
 
   return (
     <dialog className="movie-dialog" ref={dialogRef}>
       <div
         className={"dialog-container" + " " + addedClasses}
+        ref={dialogContainerRef}
         onClick={(e) => e.stopPropagation()}
       >
         {/* <i className="fa-solid fa-xmark close-button" onClick={onClose}></i> */}
-        <span class="material-symbols-outlined close-button" onClick={onClose}>
+        <span
+          class="material-symbols-outlined close-button"
+          ref={closeButtonRef}
+          onClick={onClose}
+        >
           close
         </span>
 
         <div className="thumb-image-container">
-          <div className="thumb-overlay blur-down"></div>
+          <div className="thumb-overlay blur-down" ref={thumbOverlayRef}></div>
           <img
             className="thumb-image"
             src={movieObject.image}
@@ -76,11 +112,11 @@ export default function MovieDialog({
         </div>
 
         <div className="content">
-          <div className="movie-tags">
+          {/* <div className="movie-tags">
             {movieObject.tags.map((tag) => (
               <span className="movie-tag">{tag}</span>
             ))}
-          </div>
+          </div> */}
 
           <p className="movie-description">{movieObject.description}</p>
 

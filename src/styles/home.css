@@ -130,6 +130,11 @@ $colors: (
   z-index: 900;
   background-color: #333333;
   color: white;
+  transition: background-color 0.3s ease;
+}
+.hero-section .prev-button:hover,
+.hero-section .next-button:hover {
+  background-color: #2d2d2d;
 }
 .hero-section .prev-button {
   left: 0.75rem;
@@ -239,6 +244,7 @@ $colors: (
 }
 .hero-section .slideshow-container .slide .container {
   position: relative;
+  transition: opacity 0.8s ease;
 }
 @media screen and (min-width: 600px) {
   .hero-section .slideshow-container .slide .container .info .wrapper {
@@ -343,35 +349,35 @@ $colors: (
          column-gap: 0.5rem;
   }
 }
-.hero-section .slideshow-container .slide .container .actions input {
+.hero-section .slideshow-container .slide .container .actions form input {
   padding: 0.75rem 1rem 0.5rem;
   background-color: rgba(71, 71, 71, 0.9019607843);
 }
 @media screen and (min-width: 600px) {
-  .hero-section .slideshow-container .slide .container .actions input {
+  .hero-section .slideshow-container .slide .container .actions form input {
     flex: 1;
   }
 }
 @media screen and (min-width: 960px) {
-  .hero-section .slideshow-container .slide .container .actions input {
+  .hero-section .slideshow-container .slide .container .actions form input {
     padding: 1.125rem 1rem 0.875rem;
   }
 }
-.hero-section .slideshow-container .slide .container .actions .cta-button {
+.hero-section .slideshow-container .slide .container .actions form .cta-button {
   padding: 0.75rem 1rem;
 }
 @media screen and (min-width: 600px) {
-  .hero-section .slideshow-container .slide .container .actions .cta-button {
+  .hero-section .slideshow-container .slide .container .actions form .cta-button {
     font-size: 1.25rem;
     width: 14.75rem;
   }
 }
 @media screen and (min-width: 960px) {
-  .hero-section .slideshow-container .slide .container .actions .cta-button {
+  .hero-section .slideshow-container .slide .container .actions form .cta-button {
     padding: 0.875rem 1rem;
   }
 }
-.hero-section .slideshow-container .slide .container .actions .cta-button .text {
+.hero-section .slideshow-container .slide .container .actions form .cta-button .text {
   margin-right: 1rem;
 }
 .hero-section .slideshow-container .active-transition .container {
@@ -688,128 +694,133 @@ $colors: (
   -webkit-text-fill-color: black;
   -webkit-text-stroke: 0.1rem white;
 }
-.tendances-section .movie-dialog {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 1rem;
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
-  background-color: rgba(0, 0, 0, 0.4);
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.modal-content {
+  border-radius: 0.5rem !important;
+  max-width: 667px !important;
 }
-.tendances-section .movie-dialog .dialog-container {
-  position: relative;
-  left: 0;
-  right: 0;
-  width: 100%;
-  min-height: 200px;
-  border: solid 2px #5e5e5e;
-  border-radius: 0.5rem;
-  color: white;
-  background: #161616;
-  padding: 0 0 1rem;
-  overflow: hidden;
-}
-@media screen and (min-width: 670px) {
-  .tendances-section .movie-dialog .dialog-container {
-    width: 670px;
-  }
-}
-.tendances-section .movie-dialog .close-button {
-  z-index: 999 !important;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  color: white;
-  border: none;
-  font-size: 2.75rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.modal-content .close-button {
+  z-index: 999;
   background-color: transparent;
+  transition: background-color 0.3s;
   border-radius: 50%;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.tendances-section .movie-dialog .close-button:hover {
-  background-color: rgba(15, 15, 15, 0.0823529412);
-  box-shadow: 0 0 3rem gray;
+.modal-content .close-button:hover {
+  background-color: rgba(55, 55, 55, 0.7);
 }
-.tendances-section .movie-dialog .thumb-image-container {
-  height: 304.875px;
+
+.thumb-container {
+  z-index: 900;
   position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
 }
-.tendances-section .movie-dialog .thumb-image-container .thumb-overlay {
-  background-color: rgba(255, 255, 255, 0.5);
+.thumb-container .image-container {
+  border-radius: 0.5rem !important;
+  animation: clearBlur 1s forwards;
   position: absolute;
-  left: 0;
-  right: 0;
+  inset: 0;
   height: 100%;
   z-index: 10;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center;
 }
-.tendances-section .movie-dialog .thumb-image-container .thumb-image {
+.thumb-container .thumb-overlay {
+  z-index: 902;
+  position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  background: linear-gradient(transparent, rgba(22, 22, 22, 0.7));
 }
-.tendances-section .movie-dialog .thumb-image-container .logo-image {
+.thumb-container .thumb-gradient-bg {
+  z-index: 901;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent 5%, rgb(22, 22, 22) 60%);
+  -webkit-mask-image: linear-gradient(to top, black, transparent);
+          mask-image: linear-gradient(to top, black, transparent);
+}
+.thumb-container .logo-container {
+  z-index: 903;
+  position: absolute;
+  bottom: 4rem;
+  left: 1rem;
+}
+.thumb-container .logo-container .logo-image {
   position: absolute;
   top: 50%;
   left: 2%;
   width: 21rem;
 }
-.tendances-section .movie-dialog .content {
+
+.content {
   padding: 1rem;
+  position: relative;
+  z-index: 905 !important;
 }
-.tendances-section .movie-dialog .content .movie-tags {
-  margin-bottom: 2rem;
+.content .movie-tags {
+  margin-bottom: 1rem;
+  display: flex;
 }
-.tendances-section .movie-dialog .content .movie-tags .movie-tag {
+.content .movie-tags .movie-tag {
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
-  margin-right: 0.5rem;
-  background-color: #414141;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  color: white;
 }
-.tendances-section .movie-dialog .content .movie-description {
+.content .movie-tags .movie-tag::after {
+  content: "•";
+  margin-left: 0.5rem;
+  color: gray;
+}
+.content .movie-tags .movie-tag:last-of-type::after {
+  content: "";
+}
+.content .movie-description {
   font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 960px) {
-  .tendances-section .movie-dialog .content .movie-description {
+  .content .movie-description {
     font-size: 1rem;
   }
 }
-.tendances-section .movie-dialog .cta-button {
+
+.cta-button {
   border: none;
   width: 100%;
   font-size: 1rem;
   font-weight: 400;
 }
 @media screen and (min-width: 1280px) {
-  .tendances-section .movie-dialog .cta-button {
+  .cta-button {
     font-size: 1.5rem;
   }
 }
-.tendances-section .movie-dialog .cta-button .text {
+.cta-button .text {
   margin-right: 0.75rem;
 }
 
+@keyframes clearBlur {
+  0% {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  100% {
+    -webkit-backdrop-filter: blur(0);
+            backdrop-filter: blur(0);
+  }
+}
 .raisons-section .raisons-cards {
   margin-top: 0.75rem;
 }
@@ -1184,4 +1195,101 @@ $colors: (
   position: relative;
   border: solid transparent;
   background: #0f0f0f;
+}
+
+.modal-overlay {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay .modal-content {
+  position: relative;
+  width: 100%;
+  border: solid 1px #5e5e5e;
+  border-radius: 0.25rem;
+  background-color: #161616;
+  color: white;
+}
+.modal-overlay .modal-content .close-button {
+  z-index: 999;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 300;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+.modal-overlay .modal-content .fade-in {
+  opacity: 0;
+  transform: scale(0.7);
+  animation: fadeIn 0.3s forwards !important;
+}
+.modal-overlay .modal-content .fade-out {
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeOut 0.3s forwards !important;
+}
+
+.modal-content-enter {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.modal-content-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-content-exit-active {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes bounceSize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounceBg {
+  0% {
+    background-color: rgba(255, 0, 0, 0.434);
+  }
+  50% {
+    background-color: rgba(255, 255, 0, 0.434);
+  }
+  100% {
+    background-color: rgba(255, 0, 0, 0.434);
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.7);
+  }
 }/*# sourceMappingURL=home.css.map */
