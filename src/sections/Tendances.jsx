@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import MovieDialog from "/src/components/MovieDialog.jsx";
 import Modal from "../components/Modal";
 
 export default function Tendances() {

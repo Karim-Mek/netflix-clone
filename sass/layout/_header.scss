@@ -12,18 +12,30 @@
   align-items: center;
 
   @media screen and (min-width: 960px) {
-    padding: 1rem 5rem;
+    // padding: 1rem 5rem;
   }
   @media screen and (min-width: 1280px) {
-    padding: 1rem 10rem;
+    padding: 1rem 2rem;
   }
 
   &__logo-container {
     img {
       width: 100px;
+    }
+
+    .long-logo {
+      width: 150px;
+
+      @media screen and (max-width: 959px) {
+        display: none;
+      }
+    }
+
+    .short-logo {
+      width: 45px;
 
       @media screen and (min-width: 960px) {
-        width: 150px;
+        display: none;
       }
     }
   }

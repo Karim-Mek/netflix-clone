@@ -1,11 +1,16 @@
-- Stop scrolling when model is open.
+- Hero squid game bg darker.
 - Modal overlay color darker.
 - Accordion Smooth Height Transition.
 - Movie dialog overlay transition
-- hero slide overlay (or opacity) transition.
+- Change header logo according to screen width.
+
 - Common container dynamic background.
 - Language select element.
 - Header horizontal padding.
+
+DONE:
+- Stop scrolling when model is open.
+- hero slide overlay (or opacity) transition.
 
 
 
