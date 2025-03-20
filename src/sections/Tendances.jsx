@@ -127,6 +127,14 @@ export default function Tendances() {
   }, []);
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     const wrapper = wrapperRef.current;
 
     updateButtons();

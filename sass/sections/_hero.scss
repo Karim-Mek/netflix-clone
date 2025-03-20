@@ -8,10 +8,11 @@
   position: relative;
   z-index: 10;
   margin-top: 4.75rem;
-  background-size: cover;
-  background-blend-mode: multiply;
+  // background-size: cover;
+  // background-blend-mode: multiply;
   padding: 0 1.5rem;
   color: white;
+  overflow: hidden;
 
   @media screen and (min-width: 600px) {
     padding: 0 2rem;
@@ -72,28 +73,12 @@
       height: 480px;
     }
     @media screen and (min-width: 1280px) {
-      height: 566px;
-    }
-
-    .slideshow-overlay {
-      z-index: 10;
-      position: absolute;
-      opacity: 0;
-      background: rgba(200, 200, 200, 0.2);
-      backdrop-filter: blur(40px);
-      -webkit-backdrop-filter: blur(40px);
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      transition: opacity 1s ease;
+      height: 732px;
     }
 
     .slide {
       position: absolute;
-      pointer-events: auto;
+      // pointer-events: auto;
       z-index: 999;
       top: 0;
       left: 0;
@@ -105,12 +90,12 @@
       border-radius: 1rem;
       margin: auto;
       text-align: center;
-      background-image: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8) 74%, $clr-gray-arr 100%);
+      background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8) 74%, $clr-gray-arr 100%);
       background-size: cover;
       background-blend-mode: multiply;
       padding: 2.5rem 1rem;
-      opacity: 1;
-      transition: opacity 1s ease;
+      // opacity: 0;
+      transition: opacity 1s ease !important;
 
       @media screen and (min-width: 600px) {
         padding: 3rem 2.25rem;
@@ -123,6 +108,22 @@
         padding: 6rem 5rem;
       }
 
+      .slide-overlay {
+        z-index: 10;
+        position: absolute;
+        opacity: 0;
+        background: rgba(200, 200, 200, 0.2);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 1s ease;
+      }
+
       .bg-image {
         position: absolute;
         top: 0;
@@ -130,6 +131,10 @@
         width: 100%;
         height: 50%;
         object-fit: cover;
+
+        @media screen and (min-width: 600px) {
+          height: 100% !important;
+        }
       }
 
       .container {
@@ -137,6 +142,8 @@
         transition: opacity 0.8s ease;
 
         .info {
+          position: relative;
+
           .wrapper {
             @media screen and (min-width: 600px) {
               max-width: 26.5rem;
@@ -187,8 +194,7 @@
               ul {
                 margin: auto;
                 display: flex;
-                justify-content: center;
-                // column-gap: 0.5rem;
+                justify-content: start;
 
                 li {
                   &:nth-of-type(2)::before,
@@ -202,6 +208,30 @@
                 }
               }
             }
+
+            .description {
+              display: none;
+              font-size: 0.875rem;
+
+              @media screen and (min-width: 960px) {
+                display: block;
+              }
+            }
+
+            .vertical-space {
+              height: 1rem;
+
+              @media screen and (max-width: 959px) {
+                display: none;
+              }
+            }
+          }
+
+          .logo-img {
+            position: absolute;
+            top: -4rem;
+            left: 0;
+            width: 19rem;
           }
         }
 
@@ -217,6 +247,7 @@
             letter-spacing: -0.025rem;
             margin-bottom: 0.75rem;
             font-weight: $fw-light;
+            animation: visibilityAnimation 1s ease infinite;
 
             @media screen and (min-width: 960px) {
               line-height: 1.5rem;

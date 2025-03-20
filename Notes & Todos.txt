@@ -1,9 +1,11 @@
 - Stop scrolling when model is open.
 - Modal overlay color darker.
-
-- LOGOS:
-	- Zero Day
-	- Vikings
+- Accordion Smooth Height Transition.
+- Movie dialog overlay transition
+- hero slide overlay (or opacity) transition.
+- Common container dynamic background.
+- Language select element.
+- Header horizontal padding.
 
 
 

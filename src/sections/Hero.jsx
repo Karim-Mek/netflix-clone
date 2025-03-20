@@ -36,9 +36,9 @@ export default function Hero() {
     }, 100);
 
     intervalRef.current = setInterval(() => {
-      setTransition(false);
+      // setTransition(false);
       setCurrentIndex((prev) => (prev === 3 ? 1 : prev + 1));
-      setTransition(true);
+      // setTransition(true);
 
       setTimer(0);
     }, 6500);
@@ -52,17 +52,17 @@ export default function Hero() {
   }
 
   function goPrev() {
-    setTransition(false);
+    // setTransition(false);
     setCurrentIndex((prev) => (prev === 1 ? 3 : prev - 1));
-    setTransition(true);
+    // setTransition(true);
 
     startSlideshow();
   }
 
   function goNext() {
-    setTransition(false);
+    // setTransition(false);
     setCurrentIndex((prev) => (prev === 3 ? 1 : prev + 1));
-    setTransition(true);
+    // setTransition(true);
 
     startSlideshow();
   }
@@ -87,6 +87,24 @@ export default function Hero() {
 
         <div className="slideshow-container">
           <Slide
+            bgImage="/images/movies/dialog/squid-game-dialog-bg.jpg"
+            maskImg="linear-gradient(white 80%, transparent 100%)"
+            tags={["2024", "18+", "Série", "Thrillers"]}
+            description="Tentés par un prix alléchant en cas de victoire, des centaines de joueurs désargentés acceptent de s'affronter lors de jeux pour enfants aux enjeux mortels."
+            logoImg="/images/movies/logos/squid-game-logo.jpg"
+            transition={currentIndex === 3 ? 1 : 0}
+            opacity={currentIndex === 3 ? 1 : 0}
+          />{" "}
+          <Slide
+            bgImage="/images/movies/dialog/the-night-agent-dialog-bg.jpg"
+            maskImg="linear-gradient(white 80%, transparent 100%)"
+            tags={["2025", "13+", "Film", "SF"]}
+            description="Lorsqu'un agent du FBI répond à l'appel téléphonique nocturne d'une experte en cybersécurité, ils se retrouvent à dénouer un écheveau de complots politiques qui ne cesse de s'étendre."
+            logoImg="/images/movies/logos/the-night-agent-logo.jpg"
+            transition={currentIndex === 2 ? 1 : 0}
+            opacity={currentIndex === 2 ? 1 : 0}
+          />
+          <Slide
             bgImage="/images/hero-image.jpg"
             bgImageHeight="100%"
             maskImg="linear-gradient(white 10%, transparent 100%)"
@@ -95,20 +113,6 @@ export default function Hero() {
             transition={currentIndex === 1 ? 1 : 0}
             opacity={currentIndex === 1 ? 1 : 0}
           />
-          <Slide
-            bgImage="/images/movies/dialog/the-night-agent-dialog-bg.jpg"
-            maskImg="linear-gradient(white 80%, transparent 100%)"
-            tags={["2025", "13+", "Film", "SF"]}
-            transition={currentIndex === 2 ? 1 : 0}
-            opacity={currentIndex === 2 ? 1 : 0}
-          />
-          <Slide
-            bgImage="/images/movies/dialog/squid-game-dialog-bg.jpg"
-            maskImg="linear-gradient(white 80%, transparent 100%)"
-            tags={["2024", "18+", "Série", "Thrillers"]}
-            transition={currentIndex === 3 ? 1 : 0}
-            opacity={currentIndex === 3 ? 1 : 0}
-          />{" "}
         </div>
 
         <div className="slide-actions">

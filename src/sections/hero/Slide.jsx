@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function Slide({
-  bgImage = "/public/images/hero-image.jpg",
+  bgImage = "/images/hero-image.jpg",
   bgImageHeight = "50%",
   maskImg,
   heading = "",
   subheading = "",
+  description = "",
   tags = [],
+  logoImg = "",
   transition = false,
   opacity,
 }) {
@@ -19,6 +21,7 @@ export default function Slide({
       backgroundSize: "cover",
       backgroundBlendMode: "multiply",
       opacity,
+      // transition: "opacity 2s ease !important",
     },
     bgImg: {
       height: bgImageHeight,
@@ -31,6 +34,8 @@ export default function Slide({
 
   useEffect(() => {
     handleSlideStyle();
+
+    handleOverlayStyle();
   }, [transition, opacity]);
 
   function handleSlideStyle() {
@@ -38,7 +43,7 @@ export default function Slide({
       setSlideClasses("slide fadeout-translate");
 
       setTimeout(() => {
-        setSlideClasses("delete");
+        setSlideClasses("hide-visibility");
       }, 1000);
     } else {
       setSlideClasses("slide active-transition");
@@ -47,19 +52,19 @@ export default function Slide({
 
   function handleOverlayStyle() {
     if (transition) {
-      setOverlayClasses("slideshow-overlay transition-bg");
+      setOverlayClasses("slide-overlay transition-bg");
 
       setTimeout(() => {
-        setOverlayClasses("delete");
+        setOverlayClasses("hide-visibility");
       }, 1000);
     } else {
-      setOverlayClasses("delete");
+      setOverlayClasses("hide-visibility");
     }
   }
 
   return (
     <div className={slideClasses} style={styles.slide}>
-      {/* <div className={overlayClasses}></div> */}
+      <div className={overlayClasses}></div>
 
       <img
         className={transition ? "bg-image translate-img" : "bg-image"}
@@ -73,6 +78,7 @@ export default function Slide({
           <div className="wrapper">
             <h1>{heading}</h1>
             <p className="sub-heading">{subheading}</p>
+
             <div className="tags">
               {tags && (
                 <ul>
@@ -82,7 +88,16 @@ export default function Slide({
                 </ul>
               )}
             </div>
+
+            <div className="description">{description}</div>
+            {description && <div className="vertical-space"></div>}
           </div>
+
+          {logoImg && (
+            // <div className="logo-container">
+            <img className="logo-img" src={logoImg} alt="Movie Logo" />
+            // </div>
+          )}
         </div>
 
         <div className="actions">
