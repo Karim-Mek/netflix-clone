@@ -1,7 +1,7 @@
 @import "../abstracts/theme";
 
 .cta-section {
-  background-color: black;
+  background-color: $clr-bg;
   color: white;
 
   .cta-container {
@@ -15,42 +15,42 @@
       font-size: 1rem !important;
     }
 
-    .cta-form {
-      @media screen and (min-width: 600px) {
-        display: flex;
-        justify-content: center;
-        display: flex;
-        column-gap: 0.5rem;
-      }
+    // .cta-form {
+    //   @media screen and (min-width: 600px) {
+    //     display: flex;
+    //     justify-content: center;
+    //     display: flex;
+    //     column-gap: 0.5rem;
+    //   }
 
-      .email-input {
-        background: $clr-gray-input-bg;
+    //   .email-input {
+    //     background: $clr-gray-input-bg;
 
-        border-radius: 2rem;
-        width: 100%;
-        display: block;
-        margin-bottom: 1rem;
+    //     border-radius: 2rem;
+    //     width: 100%;
+    //     display: block;
+    //     margin-bottom: 1rem;
 
-        @media screen and (min-width: 600px) {
-          margin-bottom: 0;
-        }
-      }
+    //     @media screen and (min-width: 600px) {
+    //       margin-bottom: 0;
+    //     }
+    //   }
 
-      .cta-button {
-        width: 100%;
-        padding: 1rem 0 0.75rem;
+    //   .cta-button {
+    //     width: 100%;
+    //     padding: 1rem 0 0.75rem;
 
-        @media screen and (min-width: 600px) {
-          width: 65%;
-          padding: 0.875rem;
-          font-size: 1.25rem;
-        }
+    //     @media screen and (min-width: 600px) {
+    //       width: 65%;
+    //       padding: 0.875rem;
+    //       font-size: 1.25rem;
+    //     }
 
-        span {
-          margin-right: 1rem;
-          font-weight: $fw-semibold;
-        }
-      }
-    }
+    //     span {
+    //       margin-right: 1rem;
+    //       font-weight: $fw-semibold;
+    //     }
+    //   }
+    // }
   }
 }

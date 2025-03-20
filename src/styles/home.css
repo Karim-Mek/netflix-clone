@@ -560,11 +560,9 @@ $colors: (
 );
 */
 .tendances-section {
-  background-size: 10% 10%;
-  background-repeat: no-repeat;
-  background: linear-gradient(transparent, #0f0f0f 100px);
   color: white;
   padding-top: 0.25rem;
+  padding-bottom: 0rem;
 }
 .tendances-section .container {
   position: relative;
@@ -749,7 +747,7 @@ $colors: (
           mask-image: linear-gradient(to top, black, transparent);
 }
 .thumb-container .logo-container {
-  z-index: 903;
+  z-index: 902;
   position: absolute;
   bottom: 4rem;
   left: 1rem;
@@ -759,6 +757,33 @@ $colors: (
   top: 50%;
   left: 2%;
   width: 21rem;
+}
+.thumb-container .zero-day {
+  bottom: 4rem;
+  border: solid;
+}
+.thumb-container .zero-day img {
+  width: 12rem !important;
+}
+.thumb-container .vikings {
+  bottom: 5.5rem;
+  left: 0;
+  width: 100%;
+}
+.thumb-container .vikings img {
+  position: relative;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: 65% !important;
+}
+.thumb-container .blacklist {
+  bottom: 8.5rem !important;
+}
+.thumb-container .uncharted {
+  bottom: 3rem;
+}
+.thumb-container .sakamoto-days {
+  bottom: 6rem;
 }
 
 .content {
@@ -839,7 +864,7 @@ $colors: (
 }
 .raisons-section .raisons-cards .raison-card {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   margin-bottom: 0.5rem;
   flex: 1;
@@ -930,6 +955,7 @@ $colors: (
 */
 .faq-section {
   padding: 0 2rem 1rem;
+  background-color: #0f0f0f;
 }
 .faq-section h2 {
   margin-bottom: 0.5rem;
@@ -1017,7 +1043,7 @@ $colors: (
 );
 */
 .cta-section {
-  background-color: black;
+  background-color: #0f0f0f;
   color: white;
 }
 .cta-section .cta-container {
@@ -1029,42 +1055,6 @@ $colors: (
   margin-bottom: 1rem;
   font-weight: 400;
   font-size: 1rem !important;
-}
-@media screen and (min-width: 600px) {
-  .cta-section .cta-container .cta-form {
-    display: flex;
-    justify-content: center;
-    display: flex;
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
-  }
-}
-.cta-section .cta-container .cta-form .email-input {
-  background: #474747;
-  border-radius: 2rem;
-  width: 100%;
-  display: block;
-  margin-bottom: 1rem;
-}
-@media screen and (min-width: 600px) {
-  .cta-section .cta-container .cta-form .email-input {
-    margin-bottom: 0;
-  }
-}
-.cta-section .cta-container .cta-form .cta-button {
-  width: 100%;
-  padding: 1rem 0 0.75rem;
-}
-@media screen and (min-width: 600px) {
-  .cta-section .cta-container .cta-form .cta-button {
-    width: 65%;
-    padding: 0.875rem;
-    font-size: 1.25rem;
-  }
-}
-.cta-section .cta-container .cta-form .cta-button span {
-  margin-right: 1rem;
-  font-weight: 600;
 }
 
 /*
@@ -1097,7 +1087,7 @@ $colors: (
 );
 */
 .landing-footer {
-  background-color: black;
+  background-color: #0f0f0f;
   color: rgba(255, 255, 255, 0.7);
 }
 .landing-footer a {

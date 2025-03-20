@@ -12,8 +12,6 @@ export default function Modal({ isOpen, onClose, children }) {
   }, [isOpen, show]);
 
   function handleClose() {
-    console.log("Closing");
-
     setShow(false);
 
     setTimeout(onClose, 100);

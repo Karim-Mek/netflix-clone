@@ -96,14 +96,14 @@ export default function Hero() {
             opacity={currentIndex === 1 ? 1 : 0}
           />
           <Slide
-            bgImage="/images/movies/dialog/the-night-agent-dialog-background.jpg"
+            bgImage="/images/movies/dialog/the-night-agent-dialog-bg.jpg"
             maskImg="linear-gradient(white 80%, transparent 100%)"
             tags={["2025", "13+", "Film", "SF"]}
             transition={currentIndex === 2 ? 1 : 0}
             opacity={currentIndex === 2 ? 1 : 0}
           />
           <Slide
-            bgImage="/images/movies/dialog/squid-game-dialog-background.jpg"
+            bgImage="/images/movies/dialog/squid-game-dialog-bg.jpg"
             maskImg="linear-gradient(white 80%, transparent 100%)"
             tags={["2024", "18+", "Série", "Thrillers"]}
             transition={currentIndex === 3 ? 1 : 0}

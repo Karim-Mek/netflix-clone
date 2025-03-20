@@ -1,14 +1,12 @@
 @import "../abstracts/theme";
 
 .tendances-section {
-  // position: relative;
-  background-size: 10% 10%;
-  background-repeat: no-repeat;
-  background: linear-gradient(transparent, $clr-bg 100px);
+  // background-size: 10% 10%;
+  // background-repeat: no-repeat;
+  // background: linear-gradient(transparent, $clr-bg 100px);
   color: white;
-  // padding: 2rem 2rem 0;
-  // padding: 0;
   padding-top: 0.25rem;
+  padding-bottom: 0rem;
 
   .container {
     position: relative;
@@ -18,9 +16,6 @@
       position: absolute;
       top: 0rem;
       z-index: 999;
-      // background-color: $clr-bg;
-      // background: #0f0f0fc1;
-      // background: green;
       color: white;
       width: 2rem;
       height: 15rem;
@@ -77,9 +72,6 @@
       @media screen and (min-width: 960px) {
         height: 18rem;
       }
-      // @media screen and (min-width: 1280px) {
-      //   height: 17.5rem;
-      // }
 
       // Hide scrollbar without disabling functionality:
       -ms-overflow-style: none; // For IE and Edge
@@ -203,10 +195,11 @@
   }
 
   .logo-container {
-    z-index: 903;
+    z-index: 902;
     position: absolute;
     bottom: 4rem;
     left: 1rem;
+
     .logo-image {
       position: absolute;
       top: 50%;
@@ -215,13 +208,40 @@
     }
   }
 
-  // .thumb-image {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   object-fit: cover;
-  //   object-position: top;
-  // }
+  // Specific Logo Containers
+  .zero-day {
+    bottom: 4rem;
+    border: solid;
+
+    img {
+      width: 12rem !important;
+    }
+  }
+
+  .vikings {
+    bottom: 5.5rem;
+    left: 0;
+    width: 100%;
+
+    img {
+      position: relative;
+      left: 50% !important;
+      transform: translateX(-50%);
+      width: 65% !important;
+    }
+  }
+
+  .blacklist {
+    bottom: 8.5rem !important;
+  }
+
+  .uncharted {
+    bottom: 3rem;
+  }
+
+  .sakamoto-days {
+    bottom: 6rem;
+  }
 }
 
 .content {
