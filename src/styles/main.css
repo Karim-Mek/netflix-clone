@@ -305,7 +305,7 @@ a {
 .lang-selector-container .select-button .lang-text {
   margin-right: 0.75rem;
 }
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 599px) {
   .lang-selector-container .select-button .lang-text {
     display: none;
   }
