@@ -19,10 +19,12 @@ body,
   margin: 0;
   font-family: $font-pri;
   box-sizing: border-box;
+  // color: white;
 }
 
 html,
 body {
+  background-color: $clr-bg;
   width: 100vw;
   min-width: 100%;
   height: 100% !important;
@@ -195,6 +197,61 @@ a {
 
     option {
       color: black;
+    }
+  }
+}
+
+.lang-selector-container {
+  position: relative;
+
+  .select-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: auto;
+    display: inline-block;
+    background-color: transparent;
+    border: solid 1px $clr-gray-input-border;
+    border-radius: 4rem;
+    outline-offset: 2px;
+    font-size: 1rem;
+    padding: 0.125rem 1rem;
+    color: white;
+
+    &.open {
+      outline: solid 2px;
+    }
+
+    .lang-icon {
+      margin-right: 0.5rem;
+      width: 20px;
+    }
+
+    .lang-text {
+      margin-right: 0.75rem;
+
+      @media screen and (max-width: 959px) {
+        display: none;
+      }
+    }
+  }
+
+  .lang-options {
+    position: absolute;
+    color: black !important;
+    background-color: white;
+    top: 108%;
+    width: 150%;
+
+    li {
+      padding: 0.25rem 0.5rem;
+      text-align: end;
+
+      &:hover {
+        background-color: #1165ce !important;
+        color: white;
+      }
     }
   }
 }

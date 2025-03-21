@@ -72,6 +72,7 @@ export default function Slide({
         alt="Background Image"
         style={styles.bgImg}
       />
+      <div className="bg-image-container"></div>
 
       <div className="container">
         <div className="info">

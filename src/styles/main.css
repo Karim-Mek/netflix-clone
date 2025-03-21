@@ -96,6 +96,7 @@ body,
 
 html,
 body {
+  background-color: #0f0f0f;
   width: 100vw;
   min-width: 100%;
   height: 100% !important;
@@ -274,6 +275,55 @@ a {
 }
 .select-container .select option {
   color: black;
+}
+
+.lang-selector-container {
+  position: relative;
+}
+.lang-selector-container .select-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: auto;
+  display: inline-block;
+  background-color: transparent;
+  border: solid 1px #5e5e5e;
+  border-radius: 4rem;
+  outline-offset: 2px;
+  font-size: 1rem;
+  padding: 0.125rem 1rem;
+  color: white;
+}
+.lang-selector-container .select-button.open {
+  outline: solid 2px;
+}
+.lang-selector-container .select-button .lang-icon {
+  margin-right: 0.5rem;
+  width: 20px;
+}
+.lang-selector-container .select-button .lang-text {
+  margin-right: 0.75rem;
+}
+@media screen and (max-width: 959px) {
+  .lang-selector-container .select-button .lang-text {
+    display: none;
+  }
+}
+.lang-selector-container .lang-options {
+  position: absolute;
+  color: black !important;
+  background-color: white;
+  top: 108%;
+  width: 150%;
+}
+.lang-selector-container .lang-options li {
+  padding: 0.25rem 0.5rem;
+  text-align: end;
+}
+.lang-selector-container .lang-options li:hover {
+  background-color: #1165ce !important;
+  color: white;
 }
 
 .section {

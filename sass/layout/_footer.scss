@@ -37,35 +37,20 @@
 
   .lang-container {
     margin-top: 2.5rem;
-    .select-container {
-      display: inline-block;
-      outline-offset: 2px;
-      border: solid 1px $clr-gray-input-border;
-      border-radius: 4rem;
 
-      &:has(.select:focus) {
-        outline: solid 2px;
-      }
+    .lang-selector-container {
+      width: 10rem;
 
-      .select {
-        font-size: 1rem;
-        background-color: transparent;
-        color: white;
-        outline: none !important;
-        height: 100%;
-        width: 100%;
-        padding: 0.125rem 1rem;
-        border: none !important;
-
-        option {
-          color: black;
+      .select-button {
+        .lang-text {
+          display: inline-block;
         }
       }
-    }
 
-    // .select:active {
-    //     outline: solid 2px;
-    //   }
+      .lang-options {
+        width: 100%;
+      }
+    }
   }
 
   p {

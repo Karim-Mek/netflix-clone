@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
-
-export default function Accordion({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // useEffect(() => {
-  //   // const button = document.querySelector(".question-card .question button");
-  //   // const buttonAfter = document.querySelector(
-  //   //   ".question-card .question button::after"
-  //   // );
-  //   // console.log(button);
-  //   // console.log(buttonAfter);
-  // }, [isOpen]);
-
+export default function Accordion({
+  question,
+  answer,
+  onOpen,
+  onClose,
+  isOpen,
+}) {
   function toggleAccordion() {
-    setIsOpen(!isOpen);
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
   }
 
   return (

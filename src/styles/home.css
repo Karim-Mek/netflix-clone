@@ -72,6 +72,9 @@ $colors: (
 .landing-header__actions img {
   width: 20px !important;
 }
+.landing-header__actions .sign-button span {
+  color: black;
+}
 
 /*
 $colors: (
@@ -201,8 +204,6 @@ $colors: (
   margin: auto;
   text-align: center;
   background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8) 74%, #333333 100%);
-  background-size: cover;
-  background-blend-mode: multiply;
   padding: 2.5rem 1rem;
   transition: opacity 1s ease !important;
 }
@@ -316,7 +317,11 @@ $colors: (
 .hero-section .slideshow-container .slide .container .info .wrapper .tags ul {
   margin: auto;
   display: flex;
-  justify-content: start;
+}
+@media screen and (max-width: 959px) {
+  .hero-section .slideshow-container .slide .container .info .wrapper .tags ul {
+    justify-content: center;
+  }
 }
 .hero-section .slideshow-container .slide .container .info .wrapper .tags ul li:nth-of-type(2)::before, .hero-section .slideshow-container .slide .container .info .wrapper .tags ul li:nth-of-type(3)::before, .hero-section .slideshow-container .slide .container .info .wrapper .tags ul li:nth-of-type(4)::before {
   content: "•";
@@ -343,9 +348,16 @@ $colors: (
 }
 .hero-section .slideshow-container .slide .container .info .logo-img {
   position: absolute;
+  width: 18rem;
   top: -4rem;
-  left: 0;
-  width: 19rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 960px) {
+  .hero-section .slideshow-container .slide .container .info .logo-img {
+    transform: translateX(0);
+    left: 0;
+  }
 }
 .hero-section .slideshow-container .slide .container .actions {
   width: 100%;
@@ -1011,6 +1023,7 @@ $colors: (
   margin-bottom: 0.5rem;
 }
 .faq-section .faq-list .accordion-item .question-card {
+  z-index: 10;
   margin-bottom: 0.5rem;
 }
 .faq-section .faq-list .accordion-item .question-card h3 button {
@@ -1045,18 +1058,17 @@ $colors: (
   font-size: 1.5rem;
 }
 .faq-section .faq-list .accordion-item .answer-card {
+  z-index: 2;
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 0.5rem;
   border-radius: 1rem;
-  padding: 1.5rem 1.25rem;
-  height: 0;
-  display: none;
-  transition: height 1s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 .faq-section .faq-list .accordion-item .answer-card.open {
-  height: -moz-max-content;
-  height: max-content;
-  display: block;
+  max-height: 400px;
+  padding: 1.5rem 1.25rem;
 }
 .faq-section .faq-list .accordion-item .answer-card .answers-container p {
   font-weight: 500;
@@ -1175,27 +1187,14 @@ $colors: (
 .landing-footer .lang-container {
   margin-top: 2.5rem;
 }
-.landing-footer .lang-container .select-container {
+.landing-footer .lang-container .lang-selector-container {
+  width: 10rem;
+}
+.landing-footer .lang-container .lang-selector-container .select-button .lang-text {
   display: inline-block;
-  outline-offset: 2px;
-  border: solid 1px #5e5e5e;
-  border-radius: 4rem;
 }
-.landing-footer .lang-container .select-container:has(.select:focus) {
-  outline: solid 2px;
-}
-.landing-footer .lang-container .select-container .select {
-  font-size: 1rem;
-  background-color: transparent;
-  color: white;
-  outline: none !important;
-  height: 100%;
+.landing-footer .lang-container .lang-selector-container .lang-options {
   width: 100%;
-  padding: 0.125rem 1rem;
-  border: none !important;
-}
-.landing-footer .lang-container .select-container .select option {
-  color: black;
 }
 .landing-footer p {
   margin-top: 2.5rem;
@@ -1234,13 +1233,13 @@ $colors: (
 .common-container {
   position: relative;
   border: solid transparent;
-  background: #0f0f0f;
   width: 100% !important;
   max-width: 100vw !important;
 }
 
 .modal-overlay {
   z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;

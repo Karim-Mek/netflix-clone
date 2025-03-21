@@ -8,8 +8,6 @@
   position: relative;
   z-index: 10;
   margin-top: 4.75rem;
-  // background-size: cover;
-  // background-blend-mode: multiply;
   padding: 0 1.5rem;
   color: white;
   overflow: hidden;
@@ -79,7 +77,6 @@
 
     .slide {
       position: absolute;
-      // pointer-events: auto;
       z-index: 999;
       top: 0;
       left: 0;
@@ -92,10 +89,9 @@
       margin: auto;
       text-align: center;
       background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8) 74%, $clr-gray-arr 100%);
-      background-size: cover;
-      background-blend-mode: multiply;
+      // background-size: cover;
+      // background-blend-mode: multiply;
       padding: 2.5rem 1rem;
-      // opacity: 0;
       transition: opacity 1s ease !important;
 
       @media screen and (min-width: 600px) {
@@ -136,6 +132,8 @@
         @media screen and (min-width: 600px) {
           height: 100% !important;
         }
+      }
+      .bg-image-container {
       }
 
       .container {
@@ -195,7 +193,9 @@
               ul {
                 margin: auto;
                 display: flex;
-                justify-content: start;
+                @media screen and (max-width: 959px) {
+                  justify-content: center;
+                }
 
                 li {
                   &:nth-of-type(2)::before,
@@ -230,9 +230,15 @@
 
           .logo-img {
             position: absolute;
+            width: 18rem;
             top: -4rem;
-            left: 0;
-            width: 19rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and (min-width: 960px) {
+              transform: translateX(0);
+              left: 0;
+            }
           }
         }
 

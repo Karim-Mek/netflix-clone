@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Accordion from "../components/Accordion";
 
 const faq = [
@@ -43,13 +44,33 @@ const faq = [
 ];
 
 export default function FAQ() {
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  function handleOpen(index) {
+    if (currentIndex) {
+      setCurrentIndex(null);
+    }
+
+    setCurrentIndex(index);
+  }
+
+  function handleClose() {
+    setCurrentIndex(null);
+  }
+
   return (
     <section class="faq-section section">
       <h2>Foire aux questions</h2>
 
       <ul className="faq-list">
-        {faq.map((f) => (
-          <Accordion question={f.question} answer={f.answer} />
+        {faq.map((f, i) => (
+          <Accordion
+            question={f.question}
+            answer={f.answer}
+            onOpen={() => handleOpen(i)}
+            onClose={handleClose}
+            isOpen={currentIndex === i}
+          />
         ))}
       </ul>
     </section>

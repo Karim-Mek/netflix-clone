@@ -1,31 +1,12 @@
-- Hero squid game bg darker.
-- Modal overlay color darker.
-- Accordion Smooth Height Transition.
 - Movie dialog overlay transition
-- Change header logo according to screen width.
-
 - Common container dynamic background.
-- Language select element.
-- Header horizontal padding.
 
 DONE:
+- Language select element.
+- Accordion Smooth Height Transition.
 - Stop scrolling when model is open.
 - hero slide overlay (or opacity) transition.
-
-
-
-
-
-
-Movie Dialog:
-  - The movies titles are a bit tricky. Each movie's title's style is unique. So I will create a unique component for each movie and then put it inside the object that I will pas as a prompt to the MovieDialog component.
-
-Steps:
-- Create an empty movie object: {
-  url: image url,
-  title: react component,
-  tags: array of tags for the movie,
-  description: self explanatory,
-}
-
-- Create unique 
+- Hero squid game bg darker.
+- Modal overlay color darker.
+- Change header logo according to screen width.
+- Header horizontal padding.
