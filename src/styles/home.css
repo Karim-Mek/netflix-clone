@@ -1150,11 +1150,10 @@ $colors: (
 */
 .landing-footer {
   background-color: #0f0f0f;
-  color: rgba(255, 255, 255, 0.7);
 }
 .landing-footer a {
   text-decoration: underline;
-  color: inherit;
+  color: rgba(255, 255, 255, 0.7);
 }
 .landing-footer .contact-us-link {
   margin-bottom: 2.5rem;

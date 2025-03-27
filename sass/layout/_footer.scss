@@ -2,11 +2,10 @@
 
 .landing-footer {
   background-color: $clr-bg;
-  color: rgba(255, 255, 255, 0.7);
 
   a {
     text-decoration: underline;
-    color: inherit;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .contact-us-link {
